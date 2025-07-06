@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Counter</title>
+    <script src="https://kit.fontawesome.com/831bed8798.js" crossorigin="anonymous"></script>
+    <style>
+        .icon{
+            color: white;
+            background-color: blue;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
-    
+    <main style="text-align: center;">
+        <h1>Counter</h1>
+        <p id="number">0</p>
+        <i class="icon fa-solid fa-plus" id="plus"></i>
+        <i class="icon fa-solid fa-rotate-right" id="reset"></i>
+        <i class="icon fa-solid fa-minus" id="minus"></i>
+    </main>
+    <script>
+        document.getElementById('plus').addEventListener('click', function(){
+           const number = parseInt(document.getElementById('number').innerText)
+           document.getElementById('number').innerText = number+1;
+        })
+        document.getElementById('reset').addEventListener('click', function(){
+           
+           document.getElementById('number').innerText = '0';
+        })
+        document.getElementById('minus').addEventListener('click', function(){
+           const number = parseInt(document.getElementById('number').innerText)
+           if(number>0){
+            document.getElementById('number').innerText = number-1;
+           }
+        })
+    </script>
 </body>
 </html>
